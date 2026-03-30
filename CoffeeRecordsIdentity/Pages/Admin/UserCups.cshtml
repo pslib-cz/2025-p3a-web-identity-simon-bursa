@@ -1,0 +1,18 @@
+﻿@page
+@model CoffeeRecordsIdentity.Pages.Admin.UserCupsModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+<div>
+    @foreach (var cup in Model.CoffeeCups)
+    {
+        <div>
+            @cup.CoffeeCupId
+            @cup.MachineNo
+            @cup.UserId
+        </div>
+    }
+</div>

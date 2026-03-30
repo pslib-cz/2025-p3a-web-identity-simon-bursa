@@ -1,10 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using CoffeeRecordsIdentity.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace CoffeeRecordsIdentity.InputModels
 {
-    public class CoffeeCupIM
+    public class CoffeeCupIM : ApplicationUser
     {
-        public int CoffeeCupId { get; set; }
+        public string CoffeeCupId { get; set; }
         [Required]
         [Display(Name = "User Name")]
         public string UserName { get; set; } = string.Empty;
