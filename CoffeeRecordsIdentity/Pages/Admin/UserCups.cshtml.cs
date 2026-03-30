@@ -12,16 +12,15 @@ namespace CoffeeRecordsIdentity.Pages.Admin
     {
         public List<CoffeeCup> CoffeeCups { get; set; } = [];
 
-        public void OnGet()
+        public void OnGet(string userId)
         {
-            var user = userManager.GetUserAsync(User);
-
-            if (user == null)
+            if (string.IsNullOrEmpty(userId))
             {
                 return;
             }
 
-            CoffeeCups = context.Cups.Where(x => x.UserId == user.Id.ToString()).ToList();
+
+            CoffeeCups = context.Cups.Where(x => x.UserId == userId).ToList();
         }
     }
 }
